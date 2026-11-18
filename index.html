@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guan-Zhu Tu</title>
+<meta name="description" content="Guan-Zhu Tu — materials chemist working on solution-derived epitaxial oxide thin films for photoelectrochemistry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf8; --surface: #ffffff; --text: #1d1d1f; --muted: #5f6368;
+    --line: #e6e3de; --accent: #8c1515; --accent-soft: #f6ecec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141416; --surface: #1c1c1f; --text: #ececee; --muted: #a0a0a8;
+      --line: #2d2d32; --accent: #e5736f; --accent-soft: #2a1d1d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141416; --surface: #1c1c1f; --text: #ececee; --muted: #a0a0a8;
+    --line: #2d2d32; --accent: #e5736f; --accent-soft: #2a1d1d;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: Inter, "Noto Sans TC", system-ui, sans-serif; line-height: 1.65;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+  header {
+    position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+  }
+  nav { display: flex; align-items: center; gap: 10px; height: 56px; }
+  nav .brand { font-weight: 700; color: var(--text); margin-right: auto; }
+  nav .links a { color: var(--muted); font-size: 14px; margin-left: 14px; }
+  nav .links a:hover { color: var(--text); text-decoration: none; }
+  .toggle {
+    border: 1px solid var(--line); background: var(--surface); color: var(--text);
+    border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; font-family: inherit;
+  }
+
+  .hero { display: grid; grid-template-columns: 170px 1fr; gap: 36px; align-items: center; padding: 56px 0 40px; }
+  .avatar {
+    width: 170px; height: 170px; border-radius: 50%; object-fit: cover;
+    background: var(--accent-soft); border: 1px solid var(--line);
+    display: grid; place-items: center; color: var(--accent); font-size: 52px; font-weight: 700;
+  }
+  .hero h1 { margin: 0 0 4px; font-size: 34px; line-height: 1.2; }
+  .hero .role { color: var(--muted); margin: 0 0 14px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .pills a {
+    border: 1px solid var(--line); background: var(--surface); border-radius: 999px;
+    padding: 5px 14px; font-size: 14px; color: var(--text);
+  }
+  .pills a:hover { border-color: var(--accent); text-decoration: none; }
+
+  section { padding: 30px 0; border-top: 1px solid var(--line); }
+  section h2 { font-size: 20px; margin: 0 0 16px; }
+  ul.plain { list-style: none; padding: 0; margin: 0; }
+  ul.plain > li { margin-bottom: 14px; }
+  .date { color: var(--muted); font-variant-numeric: tabular-nums; display: inline-block; min-width: 92px; }
+  .muted { color: var(--muted); }
+  .small { font-size: 14px; }
+  .me { font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  .venue { font-style: italic; }
+  .tag {
+    display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent); margin-right: 6px; vertical-align: 1px;
+  }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 16px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; }
+  .row { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .row .when { color: var(--muted); font-size: 14px; white-space: nowrap; }
+  .skills dt { font-weight: 600; margin-top: 10px; }
+  .skills dd { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+  footer { color: var(--muted); font-size: 13px; padding: 32px 0 48px; border-top: 1px solid var(--line); }
+
+  [data-lang="zh"] .en, [data-lang="en"] .zh { display: none; }
+
+  @media (max-width: 700px) {
+    nav .links { display: none; }
+    .hero { grid-template-columns: 1fr; text-align: center; padding-top: 36px; }
+    .avatar { margin: 0 auto; width: 130px; height: 130px; font-size: 40px; }
+    .pills { justify-content: center; }
+    .date { display: block; min-width: 0; }
+  }
+</style>
+</head>
+<body data-lang="en">
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#">Guan-Zhu Tu</a>
+      <div class="links">
+        <a href="#research"><span class="en">Research</span><span class="zh">研究</span></a>
+        <a href="#publications"><span class="en">Publications</span><span class="zh">論文</span></a>
+        <a href="#presentations"><span class="en">Talks</span><span class="zh">發表</span></a>
+        <a href="#awards"><span class="en">Awards</span><span class="zh">獲獎</span></a>
+        <a href="#education"><span class="en">Education</span><span class="zh">學歷</span></a>
+        <a href="#contact"><span class="en">Contact</span><span class="zh">聯絡</span></a>
+      </div>
+      <button class="toggle" id="langBtn" type="button">中文</button>
+      <button class="toggle" id="themeBtn" type="button" aria-label="Toggle dark mode">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <!-- To add a photo: put photo.jpg in this folder and replace the div below with
+         <img class="avatar" src="photo.jpg" alt="Guan-Zhu Tu"> -->
+    <div class="avatar">GT</div>
+    <div>
+      <h1>Guan-Zhu Tu</h1>
+      <p class="role">
+        <span class="en">Stanford University · M.S. &amp; B.S. in Chemistry, National Taiwan University</span>
+        <span class="zh">史丹佛大學 · 國立臺灣大學化學系 碩士、學士</span>
+      </p>
+      <p>
+        <span class="en">I am a materials chemist interested in sustainable energy and photo(electro)catalysis.
+        My work focuses on solution-derived <strong>epitaxial BiVO<sub>4</sub> thin films</strong> — how they grow,
+        and how crystallographic orientation controls their photoelectrochemical performance.
+        I completed my B.S. and M.S. in Chemistry at National Taiwan University with Prof. Chang-Ming Jiang.</span>
+        <span class="zh">我是一名材料化學研究者，關注永續能源與光（電）催化。
+        研究聚焦於以溶液法製備的<strong>磊晶 BiVO<sub>4</sub> 薄膜</strong>：探討其磊晶成長機制，
+        以及晶體取向如何影響光電化學表現。
+        我在國立臺灣大學化學系完成學士與碩士學位，指導教授為 Chang-Ming Jiang 教授。</span>
+      </p>
+      <div class="pills">
+        <a href="https://github.com/guanzhutu">GitHub</a>
+        <a href="#contact">Email</a>
+        <a href="#publications"><span class="en">Publications</span><span class="zh">論文</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section id="news">
+    <h2><span class="en">News</span><span class="zh">最新消息</span></h2>
+    <ul class="plain">
+      <li><span class="date">2025</span>
+        <span class="en">Gave an oral presentation at the <strong>E-MRS Spring Meeting</strong> in Strasbourg, France.</span>
+        <span class="zh">於法國史特拉斯堡 <strong>E-MRS 春季會議</strong>進行口頭報告。</span></li>
+      <li><span class="date">2025</span>
+        <span class="en">Received the Dean's Award, College of Science, NTU, and was inducted into the Phi Tau Phi Scholastic Honor Society.</span>
+        <span class="zh">獲臺大理學院院長獎，並獲選為斐陶斐榮譽學會會員。</span></li>
+      <li><span class="date">2025</span>
+        <span class="en">Completed my M.S. in Chemistry at National Taiwan University.</span>
+        <span class="zh">取得國立臺灣大學化學碩士學位。</span></li>
+      <li><span class="date">2024</span>
+        <span class="en">First-author paper published in <em>ACS Applied Electronic Materials</em>.</span>
+        <span class="zh">第一作者論文發表於 <em>ACS Applied Electronic Materials</em>。</span></li>
+    </ul>
+  </section>
+
+  <section id="research">
+    <h2><span class="en">Research</span><span class="zh">研究方向</span></h2>
+    <div class="cards">
+      <div class="card">
+        <h3><span class="en">Epitaxial growth mechanisms</span><span class="zh">磊晶成長機制</span></h3>
+        <p><span class="en">Achieving epitaxial BiVO<sub>4</sub> thin films by solution processing and rapid thermal annealing (RTA), and understanding how they grow.</span>
+          <span class="zh">以溶液製程搭配快速熱退火（RTA）製備磊晶 BiVO<sub>4</sub> 薄膜，並探討其成長機制。</span></p>
+      </div>
+      <div class="card">
+        <h3><span class="en">Crystallographic anisotropy in PEC</span><span class="zh">光電催化中的晶體異向性</span></h3>
+        <p><span class="en">Using BiVO<sub>4</sub>(001)/ITO/YSZ photoanodes as model systems to study orientation-dependent photoelectrocatalytic activity.</span>
+          <span class="zh">以 BiVO<sub>4</sub>(001)/ITO/YSZ 光陽極為模型系統，研究晶體取向對光電催化活性的影響。</span></p>
+      </div>
+      <div class="card">
+        <h3><span class="en">Synchrotron &amp; surface characterization</span><span class="zh">同步輻射與表面分析</span></h3>
+        <p><span class="en">XAS and variable-temperature XRD at NSRRC, combined with XPS, HRTEM and electrochemical analysis (j–V, C–V, EIS).</span>
+          <span class="zh">於國家同步輻射研究中心進行 XAS 與變溫 XRD，並結合 XPS、HRTEM 與電化學分析（j–V、C–V、EIS）。</span></p>
+      </div>
+    </div>
+    <p class="muted small" style="margin-top:16px">
+      <span class="en">Broader interests: environmental and sustainable science, catalysis, photochemistry and electrochemistry, epitaxial thin films and heterostructures.</span>
+      <span class="zh">更廣泛的興趣：環境與永續科學、催化、光化學與電化學、磊晶薄膜與異質結構。</span>
+    </p>
+  </section>
+
+  <section id="publications">
+    <h2><span class="en">Publications</span><span class="zh">論文發表</span></h2>
+    <ul class="plain">
+      <li>
+        <span class="me">Tu, G. Z.</span>; Chen, J. Y.; Zhen, Z. X.; Li, Y.; Chang, C. W.; Chang, W. J.; Jiang, C. M.
+        “Elucidating the Epitaxial Growth Mechanisms of Solution-Derived BiVO<sub>4</sub> Thin Films Utilizing Rapid Thermal Annealing.”
+        <span class="venue">ACS Appl. Electron. Mater.</span> <strong>2024</strong>, <em>6</em>(3), 1872–1885.
+        <a href="https://scholar.google.com/scholar?q=Elucidating+the+Epitaxial+Growth+Mechanisms+of+Solution-Derived+BiVO4+Thin+Films+Utilizing+Rapid+Thermal+Annealing">[Link]</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="presentations">
+    <h2><span class="en">Conferences &amp; Presentations</span><span class="zh">研討會發表</span></h2>
+    <ul class="plain">
+      <li><span class="tag">Oral</span><strong>2025 E-MRS Spring Meeting</strong> <span class="muted">· Strasbourg, France</span><br>
+        Solution-Derived Epitaxial BiVO<sub>4</sub> Films for Photoelectrochemical Applications</li>
+      <li><span class="tag">Poster</span><strong><span class="en">2025 Chemistry National Meeting</span><span class="zh">2025 化學年會</span></strong> <span class="muted">· <span class="en">Taichung, Taiwan</span><span class="zh">臺中</span></span><br>
+        Solution-Derived Epitaxial BiVO<sub>4</sub> Films for Photoelectrochemical Applications: Synthesis, Characterization, and Catalytic Performance</li>
+      <li><span class="tag">Poster</span><strong><span class="en">2024 Chemistry National Meeting</span><span class="zh">2024 化學年會</span></strong> <span class="muted">· <span class="en">Taipei, Taiwan</span><span class="zh">臺北</span></span><br>
+        Elucidating the Epitaxial Growth Mechanisms of Solution-Derived BiVO<sub>4</sub> Thin Films Utilizing Rapid Thermal Annealing</li>
+      <li><span class="tag">Poster</span><strong><span class="en">2023 Chemistry National Meeting</span><span class="zh">2023 化學年會</span></strong> <span class="muted">· <span class="en">Kaohsiung, Taiwan</span><span class="zh">高雄</span></span><br>
+        Solution-Based Synthesis of Epitaxial BiVO<sub>4</sub> Thin Films for Electron and Structural Dynamics Studies</li>
+      <li><span class="tag">Poster</span><strong><span class="en">2022 NSRRC Users' Meeting &amp; Workshops</span><span class="zh">2022 國家同步輻射研究中心用戶年會</span></strong> <span class="muted">· <span class="en">Hsinchu, Taiwan</span><span class="zh">新竹</span></span><br>
+        Solution-Based Synthesis of Epitaxial Metal Oxide Thin Films</li>
+    </ul>
+  </section>
+
+  <section id="awards">
+    <h2><span class="en">Honors &amp; Awards</span><span class="zh">榮譽與獎項</span></h2>
+    <ul class="plain">
+      <li><span class="date">2025</span><span class="en">Yen Thesis Award, National Taiwan University</span><span class="zh">Yen Thesis Award，國立臺灣大學</span></li>
+      <li><span class="date">2025</span><span class="en">Member, The Phi Tau Phi Scholastic Honor Society</span><span class="zh">斐陶斐榮譽學會 會員</span></li>
+      <li><span class="date">2025</span><span class="en">Dean's Award, College of Science, NTU (Chemistry Department Graduation Awards)</span><span class="zh">臺大理學院 院長獎（化學系畢業獎項）</span></li>
+      <li><span class="date">2024</span><span class="en">Outstanding Teaching Assistant Award, National Taiwan University</span><span class="zh">國立臺灣大學 優良教學助理</span></li>
+      <li><span class="date">2023</span><span class="en">Dean's List, Department of Chemistry, NTU</span><span class="zh">臺大化學系 書卷獎</span></li>
+      <li><span class="date">2022</span><span class="en">NSTC College Student Research Program Scholarship</span><span class="zh">國科會 大專學生研究計畫</span></li>
+      <li><span class="date">2023</span><span class="en">Certification: Semiconductor Process Engineer Competency Assessment</span><span class="zh">證照：半導體製程工程師能力鑑定</span></li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2><span class="en">Education &amp; Experience</span><span class="zh">學歷與經歷</span></h2>
+    <ul class="plain">
+      <li><div class="row"><strong><span class="en">M.S. in Chemistry, National Taiwan University</span><span class="zh">國立臺灣大學 化學系 碩士</span></strong><span class="when">2023 – 2025</span></div>
+        <span class="muted small"><span class="en">Thesis: Solution-Derived Epitaxial BiVO<sub>4</sub> Films for Photoelectrocatalytic Applications · Advisor: Prof. Chang-Ming Jiang</span>
+        <span class="zh">論文：溶液法磊晶 BiVO<sub>4</sub> 薄膜於光電催化之應用 · 指導教授：Chang-Ming Jiang</span></span></li>
+      <li><div class="row"><strong><span class="en">B.S. in Chemistry, National Taiwan University</span><span class="zh">國立臺灣大學 化學系 學士</span></strong><span class="when">2019 – 2023</span></div>
+        <span class="muted small"><span class="en">Undergraduate researcher, Jiang group (2021 – 2023)</span><span class="zh">大學部專題研究生，Jiang 研究室（2021 – 2023）</span></span></li>
+      <li><div class="row"><strong><span class="en">Teaching Assistant, General Chemistry, NTU</span><span class="zh">臺大 普通化學 教學助理</span></strong><span class="when">2023 – 2024</span></div></li>
+      <li><div class="row"><strong><span class="en">President, Event Planning Dept., NTU Chemistry Winter Camp</span><span class="zh">臺大化學營 活動部 部長</span></strong><span class="when">2021 – 2022</span></div></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2><span class="en">Techniques</span><span class="zh">實驗技術</span></h2>
+    <dl class="skills">
+      <dt><span class="en">Thin-film synthesis</span><span class="zh">薄膜製備</span></dt>
+      <dd>Spin coating, Pulsed Laser Deposition (PLD), Sputtering, Rapid Thermal Annealing</dd>
+      <dt><span class="en">Characterization</span><span class="zh">材料分析</span></dt>
+      <dd>XRD, XPS, UV-Vis, Raman, SEM, HRTEM, ICP</dd>
+      <dt><span class="en">(Photo)electrochemistry</span><span class="zh">（光）電化學</span></dt>
+      <dd>Photoelectrochemical analysis, j–V, C–V, EIS, Gas Chromatography</dd>
+      <dt><span class="en">Synchrotron (NSRRC)</span><span class="zh">同步輻射（NSRRC）</span></dt>
+      <dd>XAS (TLS17C / TPS44A), Variable-temperature XRD (TPS09A)</dd>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <h2><span class="en">Contact</span><span class="zh">聯絡方式</span></h2>
+    <p>
+      <span class="en">Email: </span><span class="zh">電子郵件：</span><span id="email">gztu [at] stanford [dot] edu</span><br>
+      GitHub: <a href="https://github.com/guanzhutu">github.com/guanzhutu</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Guan-Zhu Tu · <span class="en">Hosted on GitHub Pages</span><span class="zh">架設於 GitHub Pages</span></div>
+</footer>
+
+<script>
+  const root = document.documentElement, body = document.body;
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  };
+  function setLang(l) {
+    body.dataset.lang = l; root.lang = l === 'zh' ? 'zh-Hant' : 'en';
+    document.getElementById('langBtn').textContent = l === 'zh' ? 'EN' : '中文';
+    store.set('lang', l);
+  }
+  setLang(store.get('lang') || 'en');
+  document.getElementById('langBtn').onclick = () => setLang(body.dataset.lang === 'zh' ? 'en' : 'zh');
+
+  const savedTheme = store.get('theme'); if (savedTheme) root.dataset.theme = savedTheme;
+  document.getElementById('themeBtn').onclick = () => {
+    const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark'; store.set('theme', root.dataset.theme);
+  };
+
+  // Turn the obfuscated address into a clickable mailto link at runtime (reduces spam scraping)
+  const u = 'gztu', d = 'stanford.edu', el = document.getElementById('email');
+  el.innerHTML = '<a href="mailto:' + u + '@' + d + '">' + u + '@' + d + '</a>';
+</script>
+</body>
+</html>

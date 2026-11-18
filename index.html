@@ -111,7 +111,7 @@
   footer { color: var(--muted); font-size: 13px; padding: 32px 0 48px; border-top: 1px solid var(--line); }
 
   /* Icons: SVG files used as masks so they follow the text color in light and dark mode */
-  .ic, section > h2::before, #research .card h3::before {
+  .ic, section > h2::before {
     display: inline-block; width: 1em; height: 1em; flex: none; background: currentColor;
     -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat;
   }
@@ -132,20 +132,14 @@
   #contact > h2      { --i: url(icons/mail.svg); }
   section > h2::before { background: var(--accent); }
 
-  #research .card h3 { display: flex; flex-direction: column; gap: 10px; }
-  #research .card h3::before {
-    content: ""; width: 22px; height: 22px; background: var(--accent);
-    padding: 9px; box-sizing: content-box; border-radius: 10px;
-    -webkit-mask: none; mask: none;
-  }
-  #research .card { position: relative; }
-  #research .card::after {
-    content: ""; position: absolute; top: 25px; left: 27px; width: 22px; height: 22px; background: #fff;
-    -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat;
-  }
-  #research .card:nth-child(1) { --i: url(icons/flask-conical.svg); }
-  #research .card:nth-child(2) { --i: url(icons/layers.svg); }
-  #research .card:nth-child(3) { --i: url(icons/scan-line.svg); }
+  /* Research topics with figures */
+  .topic { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin-bottom: 16px; }
+  .topic h3 { margin: 0 0 6px; font-size: 17px; }
+  .topic p { margin: 0; color: var(--muted); font-size: 15px; }
+  .topic figure { margin: 16px 0 0; }
+  .topic figure a { display: block; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+  .topic figure img { display: block; width: 100%; height: auto; }
+  .topic figcaption { color: var(--muted); font-size: 12.5px; margin-top: 8px; }
 
   [data-lang="zh"] .en, [data-lang="en"] .zh { display: none; }
 
@@ -235,22 +229,32 @@
 
   <section id="research">
     <h2><span class="en">Research</span><span class="zh">研究方向</span></h2>
-    <div class="cards">
-      <div class="card">
-        <h3><span class="en">Solution-based oxide epitaxy</span><span class="zh">溶液法氧化物磊晶</span></h3>
-        <p><span class="en">Developed a solution-based route to epitaxial BiVO<sub>4</sub> and established its rapid-thermal-annealing conversion mechanism, validated by XRD and synchrotron measurements. (010) films show ~50% higher photocatalytic activity than (001) films.</span>
-          <span class="zh">建立溶液法磊晶 BiVO<sub>4</sub> 的製程，並以 XRD 與同步輻射量測解析其快速熱退火轉化機制；發現 (010) 取向薄膜的光催化活性比 (001) 高約 50%。</span></p>
-      </div>
-      <div class="card">
-        <h3><span class="en">Interface-engineered heterostructures</span><span class="zh">介面工程異質結構</span></h3>
-        <p><span class="en">Engineered BiVO<sub>4</sub>/ITO/YSZ heterostructures with coherent interfaces; tuning thermal budget and annealing atmosphere gives reliable orientation control and reveals pronounced facet-dependent anisotropy in charge transfer.</span>
-          <span class="zh">設計具有同調介面的 BiVO<sub>4</sub>/ITO/YSZ 異質結構，透過調控熱預算與退火氣氛達成穩定的取向控制，揭示電荷轉移中顯著的晶面異向性。</span></p>
-      </div>
-      <div class="card">
-        <h3><span class="en">Synchrotron X-ray probes</span><span class="zh">同步輻射 X 光探測</span></h3>
-        <p><span class="en">Independently designed experiments at NSRRC combining reciprocal space mapping, pump–probe resonant scattering, and XAS to track twin-domain evolution, carrier-trapping pathways, VO<sub>4</sub> distortions, and oxidation-state changes during operation.</span>
-          <span class="zh">於國家同步輻射研究中心獨立設計實驗，結合倒空間映射（RSM）、泵浦–探測共振散射與 XAS，追蹤孿晶域演變、載子捕獲路徑、VO<sub>4</sub> 結構扭曲與操作過程中的氧化態變化。</span></p>
-      </div>
+    <div class="topic">
+      <h3><span class="en">Solution-based oxide epitaxy</span><span class="zh">溶液法氧化物磊晶</span></h3>
+      <p><span class="en">Developed a solution-based route to epitaxial BiVO<sub>4</sub> and established its rapid-thermal-annealing conversion mechanism, validated by XRD and synchrotron measurements. (010) films show ~50% higher photocatalytic activity than (001) films.</span>
+        <span class="zh">建立溶液法磊晶 BiVO<sub>4</sub> 的製程，並以 XRD 與同步輻射量測解析其快速熱退火轉化機制；發現 (010) 取向薄膜的光催化活性比 (001) 高約 50%。</span></p>
+      <figure>
+        <a href="images/rta-mechanism.webp" target="_blank" rel="noopener"><img src="images/rta-mechanism.webp" width="1600" height="833" loading="lazy"
+          alt="Rapid thermal annealing converts a polycrystalline BiVO4 film into an epitaxial film on YSZ; HRTEM and FFT confirm the epitaxial interface."></a>
+        <figcaption><span class="en">Evolution of solution-derived BiVO<sub>4</sub> films during rapid thermal annealing, with HRTEM/FFT of the epitaxial BiVO<sub>4</sub>/YSZ interface. Adapted from Tu <em>et al.</em>, <em>ACS Appl. Electron. Mater.</em> 2024.</span>
+          <span class="zh">溶液法 BiVO<sub>4</sub> 薄膜在快速熱退火過程中的演變，右為磊晶 BiVO<sub>4</sub>/YSZ 介面的 HRTEM 與 FFT。改編自 Tu <em>et al.</em>, <em>ACS Appl. Electron. Mater.</em> 2024。</span></figcaption>
+      </figure>
+    </div>
+    <div class="topic">
+      <h3><span class="en">Interface-engineered heterostructures</span><span class="zh">介面工程異質結構</span></h3>
+      <p><span class="en">Engineered BiVO<sub>4</sub>/ITO/YSZ heterostructures with coherent interfaces; tuning thermal budget and annealing atmosphere gives reliable orientation control and reveals pronounced facet-dependent anisotropy in charge transfer.</span>
+        <span class="zh">設計具有同調介面的 BiVO<sub>4</sub>/ITO/YSZ 異質結構，透過調控熱預算與退火氣氛達成穩定的取向控制，揭示電荷轉移中顯著的晶面異向性。</span></p>
+      <figure>
+        <a href="images/heterostructure-pole-figures.webp" target="_blank" rel="noopener"><img src="images/heterostructure-pole-figures.webp" width="1600" height="454" loading="lazy"
+          alt="XRD pole figures of BiVO4 (004) and (112) and a schematic of the epitaxial relationship in BiVO4/ITO/YSZ."></a>
+        <figcaption><span class="en">BiVO<sub>4</sub> (004) and (112) pole figures and the epitaxial relationship of monoclinic BiVO<sub>4</sub> on ITO/YSZ.</span>
+          <span class="zh">BiVO<sub>4</sub> (004) 與 (112) 極圖，以及單斜 BiVO<sub>4</sub> 在 ITO/YSZ 上的磊晶關係示意圖。</span></figcaption>
+      </figure>
+    </div>
+    <div class="topic">
+      <h3><span class="en">Synchrotron X-ray probes</span><span class="zh">同步輻射 X 光探測</span></h3>
+      <p><span class="en">Independently designed experiments at NSRRC combining reciprocal space mapping, pump–probe resonant scattering, and XAS to track twin-domain evolution, carrier-trapping pathways, VO<sub>4</sub> distortions, and oxidation-state changes during operation.</span>
+        <span class="zh">於國家同步輻射研究中心獨立設計實驗，結合倒空間映射（RSM）、泵浦–探測共振散射與 XAS，追蹤孿晶域演變、載子捕獲路徑、VO<sub>4</sub> 結構扭曲與操作過程中的氧化態變化。</span></p>
     </div>
     <p class="muted small" style="margin-top:16px">
       <span class="en">Looking ahead, I aim to build oxide heterostructure platforms that reveal the fundamental links among structure, defects, and transport — using operando characterization to follow defect evolution and interfacial charge transfer in working materials.</span>

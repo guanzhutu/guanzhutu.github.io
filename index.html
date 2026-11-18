@@ -73,6 +73,8 @@
     display: inline-block; font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 999px;
     background: var(--accent-soft); color: var(--accent); margin-right: 6px; vertical-align: 1px;
   }
+  .pubhead { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 22px 0 10px; }
+  .pubhead:first-of-type { margin-top: 0; }
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
   .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
   .card h3 { margin: 0 0 6px; font-size: 16px; }
@@ -150,6 +152,9 @@
   <section id="news">
     <h2><span class="en">News</span><span class="zh">最新消息</span></h2>
     <ul class="plain">
+      <li><span class="date">2026</span>
+        <span class="en">Co-authored paper on Mo-doped BiVO<sub>4</sub> for benzyl alcohol oxidation published in <em>Sustainable Energy &amp; Fuels</em>.</span>
+        <span class="zh">共同作者論文（Mo 摻雜 BiVO<sub>4</sub> 光電催化苯甲醇氧化）發表於 <em>Sustainable Energy &amp; Fuels</em>。</span></li>
       <li><span class="date">2025</span>
         <span class="en">Gave an oral presentation at the <strong>E-MRS Spring Meeting</strong> in Strasbourg, France.</span>
         <span class="zh">於法國史特拉斯堡 <strong>E-MRS 春季會議</strong>進行口頭報告。</span></li>
@@ -192,14 +197,47 @@
 
   <section id="publications">
     <h2><span class="en">Publications</span><span class="zh">論文發表</span></h2>
+    <h3 class="pubhead"><span class="en">Published</span><span class="zh">已發表</span></h3>
     <ul class="plain">
       <li>
-        <span class="me">Tu, G. Z.</span>; Chen, J. Y.; Zhen, Z. X.; Li, Y.; Chang, C. W.; Chang, W. J.; Jiang, C. M.
+        Kuang, C.-C.; Chen, Y.-W.; <span class="me">Tu, G.-Z.</span>; Chen, H.-L.; Fong, J.-L.; Wang, Y.-S.; Chang, C.-W.; Wu, J.-Y.; Chang, T.-T.; Chang, C.-H.; Tian, H.-K.; Jiang, C.-M.
+        “Mitigating Redox Mediator-Induced Surface Recombination for Efficient Photoelectrocatalytic Benzyl Alcohol Oxidation on Mo-Doped BiVO<sub>4</sub>.”
+        <span class="venue">Sustain. Energy Fuels</span> <strong>2026</strong>, <em>10</em>, 2090–2100.
+        <a href="https://pubs.rsc.org/en/content/articlelanding/2026/se/d6se00110f">[Link]</a>
+      </li>
+      <li>
+        <span class="me">Tu, G.-Z.</span>; Chen, J.-Y.; Zhen, Z.-X.; Li, Y.; Chang, C.-W.; Chang, W.-J.; Chen, H. M.; Jiang, C.-M.
         “Elucidating the Epitaxial Growth Mechanisms of Solution-Derived BiVO<sub>4</sub> Thin Films Utilizing Rapid Thermal Annealing.”
-        <span class="venue">ACS Appl. Electron. Mater.</span> <strong>2024</strong>, <em>6</em>(3), 1872–1885.
-        <a href="https://scholar.google.com/citations?user=ehaftlwAAAAJ">[Google Scholar]</a>
+        <span class="venue">ACS Appl. Electron. Mater.</span> <strong>2024</strong>, <em>6</em>, 1872–1885.
+        <a href="https://pubs.acs.org/doi/10.1021/acsaelm.3c01785">[DOI]</a>
       </li>
     </ul>
+    <h3 class="pubhead"><span class="en">Under Review</span><span class="zh">審稿中</span></h3>
+    <ul class="plain">
+      <li>
+        <span class="me">Tu, G.-Z.</span>; Tsai, J.-C.; Chen, S.-Y.; Wang, Y.-S.; Chen, P.-T.; Chuang, C.-Y.; Cheng, P.-W.; Lee, H.-K.; Chen, C.-h.; Jiang, C.-M.
+        “Solution-Derived Epitaxial BiVO<sub>4</sub>(001) Photoanodes Reveal Reaction-Dependent Interfacial Chemistry.”
+        <span class="muted"><span class="en">Revised and resubmitted.</span><span class="zh">修訂後重新投稿。</span></span>
+        <a href="https://chemrxiv.org/doi/full/10.26434/chemrxiv-2025-q1vl6/v2">[ChemRxiv]</a>
+      </li>
+      <li>
+        Li, Y.; Huang, H.-Y.; Chen, S.-Y.; Urru, A.; Okamoto, J.; Su, J.-S.; Tsou, C.-Y.; Jiang, B.; <span class="me">Tu, G.-Z.</span>; Chen, J.-Y.; Chen, P.-T.; Shih, Y.-H.; Reyes-Lillo, S. E.; Chen, H. M.; Hsu, L.-Y.; Huang, D.-J.; Jiang, C.-M.
+        “Reconciling Negative Charge-Transfer Electronic Structure with Surface Reconstruction during Oxygen Evolution on AgNiO<sub>2</sub>.”
+        <span class="muted"><span class="en">In revision.</span><span class="zh">修訂中。</span></span>
+      </li>
+    </ul>
+    <h3 class="pubhead"><span class="en">In Preparation</span><span class="zh">準備中</span></h3>
+    <ul class="plain">
+      <li>
+        Lee, H.-K.; Chen, S.-Y.; Fong, J.-L.; Lai, B.-Y.; Chang, J.-H.; <span class="me">Tu, G.-Z.</span>; Shih, Y.-H.; Chang, T.-T.; Tsou, C.-Y.; Chang, C.-H.; Chang, W.-J.; Chang, Y.-C.; Chen, H. M.; Tsai, M.-K.; Jiang, C.-M.
+        “Composition-Dependent Electrochemical Nitrate Reduction Performance of Tungsten Nitride.”
+      </li>
+      <li>
+        Li, Y.; Chen, S.-Y.; Huang, H.-Y.; Chen, G.-J.; Su, J.-S.; Singh, A.; <span class="me">Tu, G.-Z.</span>; Yeh, C.-H.; Chang, C.-W.; Hsing, C.-R.; Weng, S.-C.; Hsu, L.-Y.; Huang, D.-J.; Jiang, C.-M.
+        “Resonance- and Polarization-Dependent Phonon Excitations in CuFeO<sub>2</sub>.”
+      </li>
+    </ul>
+    <p class="muted small"><span class="en">Full list:</span><span class="zh">完整列表：</span> <a href="https://scholar.google.com/citations?user=ehaftlwAAAAJ">Google Scholar</a></p>
   </section>
 
   <section id="presentations">

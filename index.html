@@ -110,6 +110,52 @@
   .skills dd { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
   footer { color: var(--muted); font-size: 13px; padding: 32px 0 48px; border-top: 1px solid var(--line); }
 
+  /* Icons: SVG files used as masks so they follow the text color in light and dark mode */
+  .ic, section > h2::before, #research .card h3::before {
+    display: inline-block; width: 1em; height: 1em; flex: none; background: currentColor;
+    -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat;
+  }
+  .pills a { display: inline-flex; align-items: center; gap: 7px; }
+  .pills .ic { width: 15px; height: 15px; color: var(--accent); }
+  section > h2 { display: flex; align-items: center; gap: 10px; }
+  section > h2::before {
+    content: ""; width: 20px; height: 20px; color: var(--accent);
+  }
+  #news > h2         { --i: url(icons/newspaper.svg); }
+  #research > h2     { --i: url(icons/atom.svg); }
+  #publications > h2 { --i: url(icons/book-open.svg); }
+  #presentations > h2{ --i: url(icons/mic.svg); }
+  #awards > h2       { --i: url(icons/award.svg); }
+  #education > h2    { --i: url(icons/graduation-cap.svg); }
+  #skills > h2       { --i: url(icons/microscope.svg); }
+  #beyond > h2       { --i: url(icons/gamepad-2.svg); }
+  #contact > h2      { --i: url(icons/mail.svg); }
+  section > h2::before { background: var(--accent); }
+
+  #research .card h3 { display: flex; flex-direction: column; gap: 10px; }
+  #research .card h3::before {
+    content: ""; width: 22px; height: 22px; background: var(--accent);
+    padding: 9px; box-sizing: content-box; border-radius: 10px;
+    -webkit-mask: none; mask: none;
+  }
+  #research .card { position: relative; }
+  #research .card::after {
+    content: ""; position: absolute; top: 25px; left: 27px; width: 22px; height: 22px; background: #fff;
+    -webkit-mask: var(--i) center / contain no-repeat; mask: var(--i) center / contain no-repeat;
+  }
+  #research .card:nth-child(1) { --i: url(icons/flask-conical.svg); }
+  #research .card:nth-child(2) { --i: url(icons/layers.svg); }
+  #research .card:nth-child(3) { --i: url(icons/scan-line.svg); }
+
+  /* School badges (monograms in school colors) */
+  .edu > li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
+  .badge {
+    width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+    color: #fff; font-weight: 700; font-size: 13px; letter-spacing: .02em; font-family: Georgia, "Times New Roman", serif;
+  }
+  .badge.su  { background: #8c1515; font-size: 22px; }
+  .badge.ntu { background: #1f3a68; }
+
   [data-lang="zh"] .en, [data-lang="en"] .zh { display: none; }
 
   @media (max-width: 700px) {
@@ -165,12 +211,12 @@
         此前我在國立臺灣大學化學系取得學士與碩士學位，也是 Chang-Ming Jiang 教授研究室的第一位大學部專題生。</span>
       </p>
       <div class="pills">
-        <a href="cv.pdf">CV</a>
-        <a href="https://scholar.google.com/citations?user=ehaftlwAAAAJ">Google Scholar</a>
-        <a href="https://www.linkedin.com/in/kuan-chu-tu">LinkedIn</a>
-        <a href="https://github.com/guanzhutu">GitHub</a>
-        <a href="#contact">Email</a>
-        <a href="#publications"><span class="en">Publications</span><span class="zh">論文</span></a>
+        <a href="cv.pdf"><i class="ic" style="--i:url(icons/file-text.svg)"></i>CV</a>
+        <a href="https://scholar.google.com/citations?user=ehaftlwAAAAJ"><i class="ic" style="--i:url(icons/googlescholar.svg)"></i>Google Scholar</a>
+        <a href="https://www.linkedin.com/in/kuan-chu-tu"><i class="ic" style="--i:url(icons/linkedin.svg)"></i>LinkedIn</a>
+        <a href="https://github.com/guanzhutu"><i class="ic" style="--i:url(icons/github.svg)"></i>GitHub</a>
+        <a href="#contact"><i class="ic" style="--i:url(icons/mail.svg)"></i>Email</a>
+        <a href="#publications"><i class="ic" style="--i:url(icons/book-open.svg)"></i><span class="en">Publications</span><span class="zh">論文</span></a>
       </div>
     </div>
   </div>
@@ -297,15 +343,20 @@
 
   <section id="education">
     <h2><span class="en">Education &amp; Experience</span><span class="zh">學歷與經歷</span></h2>
-    <ul class="plain">
-      <li><div class="row"><strong><span class="en">Ph.D. in Materials Science &amp; Engineering, Stanford University</span><span class="zh">史丹佛大學 材料科學與工程學系 博士班</span></strong><span class="when"><span class="en">Present</span><span class="zh">在學中</span></span></div></li>
-      <li><div class="row"><strong><span class="en">M.S. in Chemistry, National Taiwan University</span><span class="zh">國立臺灣大學 化學系 碩士</span></strong><span class="when">2023 – 2025</span></div>
+    <ul class="plain edu">
+      <li><span class="badge su" title="Stanford University">S</span><div>
+        <div class="row"><strong><span class="en">Ph.D. in Materials Science &amp; Engineering, Stanford University</span><span class="zh">史丹佛大學 材料科學與工程學系 博士班</span></strong><span class="when"><span class="en">Present</span><span class="zh">在學中</span></span></div></div></li>
+      <li><span class="badge ntu" title="National Taiwan University">NTU</span><div>
+        <div class="row"><strong><span class="en">M.S. in Chemistry, National Taiwan University</span><span class="zh">國立臺灣大學 化學系 碩士</span></strong><span class="when">2023 – 2025</span></div>
         <span class="muted small"><span class="en">Thesis: Solution-Derived Epitaxial BiVO<sub>4</sub> Films for Photoelectrocatalytic Applications · Advisor: Prof. Chang-Ming Jiang</span>
-        <span class="zh">論文：溶液法磊晶 BiVO<sub>4</sub> 薄膜於光電催化之應用 · 指導教授：Chang-Ming Jiang</span></span></li>
-      <li><div class="row"><strong><span class="en">B.S. in Chemistry, National Taiwan University</span><span class="zh">國立臺灣大學 化學系 學士</span></strong><span class="when">2019 – 2023</span></div>
-        <span class="muted small"><span class="en">Undergraduate researcher, Jiang group (2021 – 2023)</span><span class="zh">大學部專題研究生，Jiang 研究室（2021 – 2023）</span></span></li>
-      <li><div class="row"><strong><span class="en">Teaching Assistant, General Chemistry, NTU</span><span class="zh">臺大 普通化學 教學助理</span></strong><span class="when">2023 – 2024</span></div></li>
-      <li><div class="row"><strong><span class="en">President, Event Planning Dept., NTU Chemistry Winter Camp</span><span class="zh">臺大化學營 活動部 部長</span></strong><span class="when">2021 – 2022</span></div></li>
+        <span class="zh">論文：溶液法磊晶 BiVO<sub>4</sub> 薄膜於光電催化之應用 · 指導教授：Chang-Ming Jiang</span></span></div></li>
+      <li><span class="badge ntu" title="National Taiwan University">NTU</span><div>
+        <div class="row"><strong><span class="en">B.S. in Chemistry, National Taiwan University</span><span class="zh">國立臺灣大學 化學系 學士</span></strong><span class="when">2019 – 2023</span></div>
+        <span class="muted small"><span class="en">Undergraduate researcher, Jiang group (2021 – 2023)</span><span class="zh">大學部專題研究生，Jiang 研究室（2021 – 2023）</span></span></div></li>
+      <li><span class="badge ntu" title="National Taiwan University">NTU</span><div>
+        <div class="row"><strong><span class="en">Teaching Assistant, General Chemistry, NTU</span><span class="zh">臺大 普通化學 教學助理</span></strong><span class="when">2023 – 2024</span></div></div></li>
+      <li><span class="badge ntu" title="National Taiwan University">NTU</span><div>
+        <div class="row"><strong><span class="en">President, Event Planning Dept., NTU Chemistry Winter Camp</span><span class="zh">臺大化學營 活動部 部長</span></strong><span class="when">2021 – 2022</span></div></div></li>
     </ul>
   </section>
 
@@ -327,13 +378,13 @@
     <h2><span class="en">Beyond Research</span><span class="zh">研究之外</span></h2>
     <div class="cards">
       <div class="card">
-        <h3><a href="https://www.youtube.com/@aggregate-zone">YouTube · Aggregate</a></h3>
+        <h3><a href="https://www.youtube.com/@aggregate-zone" style="display:inline-flex;align-items:center;gap:8px"><i class="ic" style="--i:url(icons/youtube.svg)"></i>YouTube · Aggregate</a></h3>
         <p><span class="en">I run a gaming channel featuring Yu-Gi-Oh! Master Duel ranked matches and viewer-submitted replays, with occasional Arknights, StarCraft II and MapleStory videos.</span>
           <span class="zh">我經營一個遊戲頻道，主要分享遊戲王 Master Duel 天梯對戰與觀眾投稿的回放，偶爾也有明日方舟、星海爭霸 2、新楓之谷的影片。</span></p>
         <p style="margin-top:10px"><a href="https://script.google.com/macros/s/AKfycbxRKQg0Zzu6HNSQNCJJQ2k3tYBy5Ib47PfIRQ-tMu3O0T3Qxajd7GyUqfl6_mYR3BM/exec"><span class="en">→ Submit a replay</span><span class="zh">→ 投稿表單</span></a></p>
       </div>
       <div class="card">
-        <h3><a href="https://www.youtube.com/@kuanchutu0107">YouTube · Kuan Chu Tu</a></h3>
+        <h3><a href="https://www.youtube.com/@kuanchutu0107" style="display:inline-flex;align-items:center;gap:8px"><i class="ic" style="--i:url(icons/youtube.svg)"></i>YouTube · Kuan Chu Tu</a></h3>
         <p><span class="en">My personal YouTube channel.</span>
           <span class="zh">我的個人 YouTube 頻道。</span></p>
       </div>

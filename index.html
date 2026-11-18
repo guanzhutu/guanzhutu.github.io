@@ -147,15 +147,6 @@
   #research .card:nth-child(2) { --i: url(icons/layers.svg); }
   #research .card:nth-child(3) { --i: url(icons/scan-line.svg); }
 
-  /* School badges (monograms in school colors) */
-  .edu > li { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
-  .badge {
-    width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
-    color: #fff; font-weight: 700; font-size: 13px; letter-spacing: .02em; font-family: Georgia, "Times New Roman", serif;
-  }
-  .badge.su  { background: #8c1515; font-size: 22px; }
-  .badge.ntu { background: #1f3a68; }
-
   [data-lang="zh"] .en, [data-lang="en"] .zh { display: none; }
 
   @media (max-width: 700px) {
@@ -344,18 +335,18 @@
   <section id="education">
     <h2><span class="en">Education &amp; Experience</span><span class="zh">學歷與經歷</span></h2>
     <ul class="plain edu">
-      <li><span class="badge su" title="Stanford University">S</span><div>
+      <li><div>
         <div class="row"><strong><span class="en">Ph.D. in Materials Science &amp; Engineering, Stanford University</span><span class="zh">史丹佛大學 材料科學與工程學系 博士班</span></strong><span class="when"><span class="en">Present</span><span class="zh">在學中</span></span></div></div></li>
-      <li><span class="badge ntu" title="National Taiwan University">NTU</span><div>
+      <li><div>
         <div class="row"><strong><span class="en">M.S. in Chemistry, National Taiwan University</span><span class="zh">國立臺灣大學 化學系 碩士</span></strong><span class="when">2023 – 2025</span></div>
         <span class="muted small"><span class="en">Thesis: Solution-Derived Epitaxial BiVO<sub>4</sub> Films for Photoelectrocatalytic Applications · Advisor: Prof. Chang-Ming Jiang</span>
         <span class="zh">論文：溶液法磊晶 BiVO<sub>4</sub> 薄膜於光電催化之應用 · 指導教授：Chang-Ming Jiang</span></span></div></li>
-      <li><span class="badge ntu" title="National Taiwan University">NTU</span><div>
+      <li><div>
         <div class="row"><strong><span class="en">B.S. in Chemistry, National Taiwan University</span><span class="zh">國立臺灣大學 化學系 學士</span></strong><span class="when">2019 – 2023</span></div>
         <span class="muted small"><span class="en">Undergraduate researcher, Jiang group (2021 – 2023)</span><span class="zh">大學部專題研究生，Jiang 研究室（2021 – 2023）</span></span></div></li>
-      <li><span class="badge ntu" title="National Taiwan University">NTU</span><div>
+      <li><div>
         <div class="row"><strong><span class="en">Teaching Assistant, General Chemistry, NTU</span><span class="zh">臺大 普通化學 教學助理</span></strong><span class="when">2023 – 2024</span></div></div></li>
-      <li><span class="badge ntu" title="National Taiwan University">NTU</span><div>
+      <li><div>
         <div class="row"><strong><span class="en">President, Event Planning Dept., NTU Chemistry Winter Camp</span><span class="zh">臺大化學營 活動部 部長</span></strong><span class="when">2021 – 2022</span></div></div></li>
     </ul>
   </section>
